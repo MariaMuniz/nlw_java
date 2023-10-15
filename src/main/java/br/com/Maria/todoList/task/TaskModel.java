@@ -46,12 +46,7 @@ public String getDescription() {
 public void setDescription(String description) {
 	this.description = description;
 }
-public String getTitle() {
-	return title;
-}
-public void setTitle(String title) {
-	this.title = title;
-}
+
 public LocalDateTime getStartAt() {
 	return startAt;
 }
@@ -76,8 +71,16 @@ public LocalDateTime getCreatedAt() {
 public void setCreatedAt(LocalDateTime createdAt) {
 	this.createdAt = createdAt;
 }
- 
- 
+public String getTitle() {
+	return title;
+}
+
+ public void setTitle(String title) throws Exception{
+	 if(title.length() > 50) {
+		throw new Exception("O campo title deve conter no maximo 50 caracteres");
+	 }
+	 this.title =title;
+ }
  
  
  
